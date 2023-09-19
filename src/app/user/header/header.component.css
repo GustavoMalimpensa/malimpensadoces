@@ -1,15 +1,14 @@
 /* Estilo para o logo no canto superior esquerdo */
 .logo {
-    width: 40px; /* Ajuste o tamanho da imagem conforme necessário */
-    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
-    width: 60px; /* Tamanho da imagem do logotipo */
-    height: 60px; /* Tamanho da imagem do logotipo */
+    margin-right: 5px; /* Espaçamento entre a imagem e o texto */
+    width: 50px; /* Tamanho da imagem do logotipo */
+    height: 50px; /* Tamanho da imagem do logotipo */
 }
 
 /* Estilo para o texto do logo */
 .navbar-brand {
     font-weight: bold;
-    padding: 10px 0; /* Margem superior e inferior */
+    padding: 5px 0; /* Margem superior e inferior */
     color: #9b9999;
 }
 
