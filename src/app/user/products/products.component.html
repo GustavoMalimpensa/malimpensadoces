@@ -85,57 +85,64 @@
 </ng-template>
 
 
-
-
-
-
-<!--Modal Finalizar Compra-->
+<!--Modal Carrinho de Compras-->
 
 <ng-template #modalTemplate>
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header bg-primary text-white">
-        <h4 class="modal-title">{{ title }}</h4>
-        <button type="button" class="btn-close close" aria-label="Close" (click)="modalRef?.hide()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div *ngFor="let item of carrinho" class="d-flex mb-3">
-          <div >
-            <img src="{{ item.imageUrl }}" alt="{{ item.name }}" class="custom-image-small">
-          </div >
-          <div class="flex-grow-1">
-            <h5>{{ item.name }}</h5>
-            <p> R$ {{ item.price }}</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <p>Quantidade: {{ item.quantidade }}</p>
-                <p>Total: R$ {{ item.price * item.quantidade }}</p>
-              </div>
-      
-            </div>
+  <div class="modal-header bg-primary text-white">
+    <div class="x-model">
+      <button type="button" class="btn-close close" aria-label="Close" (click)="modalRef?.hide()"></button>
+    </div>
+    <div >
+      <h4 class="modal-title mx-auto">Carrinho</h4>
+    </div>
+    <div class="limpar-model">
+      <button type="button" class="btn btn-secondary" (click)="modalRef?.hide()">Limpar</button>
+    </div>
+  </div>
+  <div class="modal-body">
+    <div *ngFor="let item of carrinho" class="d-flex mb-3">
+
+
+      <div class="row">
+        <div class="col-6 col-md-4">
+          <img src="{{ item.imageUrl }}" alt="{{ item.name }}" class="custom-small-square-image">
+        </div>
+        <div class="col-6 col-md-4">
+          <div class="nome-modal col align-self-start">
+            <h5 class="nome-modal">{{ item.name }}</h5>
           </div>
-          <div>
-            <button class="btn btn-danger" (click)="removerDoCarrinho(item)">Remover</button>
+
+          <div class="quantidade-modal col align-self-start">
+            <p  class="quantidade-modal">Quantidade: {{ item.quantidade }}</p>
+          </div>
+           
+          <div class="col align-self-start">
+            <p>Total: R$ {{ item.price * item.quantidade }},00</p>
           </div>
         </div>
-        <div *ngIf="carrinho.length > 0">
-          <p>Total: R$ {{ precoTotal }}</p>
-        </div>
-        <div *ngIf="carrinho.length > 0">
-          <p>Itens: R$ {{ itenTotal }}</p>
+        <div class="col-6 col-md-4">
+          <button class="btn btn-danger" (click)="removerDoCarrinho(item)">Remover</button>
         </div>
       </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary btn-block" (click)="finalizarCompra()">
-          Finalizar Conta
-        </button>
-        <button type="button" class="btn btn-secondary" (click)="modalRef?.hide()">Cancelar</button>
+    </div>
+    
+
+    <div *ngIf="carrinho.length > 0" class="row d-flex justify-content-between">
+      <div class="col-6">
+        <p>Total:</p>
+      </div>
+      <div class="col-6">
+        <p>R$ {{ precoTotal }}</p>
       </div>
     </div>
   </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary custom-primary-button btn-block custom-button-height no-border" (click)="finalizarCompra()">
+      Continuar
+    </button>
+  </div>
 </ng-template>
+
 
 
   

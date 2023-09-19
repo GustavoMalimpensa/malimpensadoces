@@ -14,6 +14,25 @@
     object-fit: cover; /* Para ajustar a imagem ao tamanho especificado mantendo a proporção */
 }
 
+.custom-small-square-image {
+    border-radius: 10px;
+    width: 70px; /* Defina a largura desejada (exemplo: 50px) */
+    height: 70px; /* Defina a altura desejada (exemplo: 50px) */
+    object-fit: cover; /* Para ajustar a imagem ao tamanho especificado mantendo a proporção */
+}
+
+.nome-modal{
+    font-size: 12px;
+}
+
+.quantidade-modal{
+    font-size: 10px;
+}
+
+.preco-total-modal{
+    font-size: 12px;
+}
+
 .custom-primary-button:active {
     background-color: #cb0606; /* Cor quando o botão está ativo (pressionado) */
     /* Adicione outros estilos desejados para a pseudo-classe :active, se necessário */
