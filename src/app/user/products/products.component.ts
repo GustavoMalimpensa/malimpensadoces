@@ -29,10 +29,10 @@ export class ProductsComponent {
       id: 1,
       category: 'bolo',
       name: 'Bolo de Morango',
-      description: 'Bolo com pedaços de morango',
+      description: 'Pedaços de morando com leite ninho, massa feita com farinha integral',
       imageUrl: './assets/img/bolodedepote.jpeg',
       keywords: 'morango',
-      price: 12,
+      price: 12.00,
     },
     {
       id: 2,
@@ -41,7 +41,7 @@ export class ProductsComponent {
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolofatia.jpeg',
       keywords: 'chocolate',
-      price: 15,
+      price: 15.00,
     },
     {
       id: 3,
@@ -50,7 +50,7 @@ export class ProductsComponent {
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/cone.jpeg',
       keywords: 'uva',
-      price: 16,
+      price: 16.00,
     },
     {
       id: 4,
@@ -59,7 +59,7 @@ export class ProductsComponent {
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolodedepote.jpeg',
       keywords: 'morango',
-      price: 12,
+      price: 12.00,
     },
     {
       id: 5,
@@ -68,7 +68,7 @@ export class ProductsComponent {
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolofatia.jpeg',
       keywords: 'morango',
-      price: 15,
+      price: 15.00,
     },
     {
       id: 6,
@@ -77,7 +77,7 @@ export class ProductsComponent {
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/cone.jpeg',
       keywords: 'morango',
-      price: 16,
+      price: 16.00,
     },
     {
       id: 7,
@@ -86,7 +86,7 @@ export class ProductsComponent {
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolodedepote.jpeg',
       keywords: 'morango',
-      price: 12,
+      price: 12.00,
     },
     {
       id: 8,
@@ -95,7 +95,7 @@ export class ProductsComponent {
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolofatia.jpeg',
       keywords: 'morango',
-      price: 15,
+      price: 15.00,
     },
     {
       id: 9,
@@ -104,7 +104,7 @@ export class ProductsComponent {
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/cone.jpeg',
       keywords: 'morango',
-      price: 16,
+      price: 16.00,
     },
     {
       id: 10,
@@ -113,7 +113,7 @@ export class ProductsComponent {
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolodedepote.jpeg',
       keywords: 'morango',
-      price: 12,
+      price: 12.00,
     },
     {
       id: 11,
@@ -122,7 +122,7 @@ export class ProductsComponent {
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolofatia.jpeg',
       keywords: 'morango',
-      price: 15,
+      price: 15.00,
     },
     {
       id: 12,

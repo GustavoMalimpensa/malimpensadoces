@@ -17,18 +17,16 @@
   </ul>  
 </div>
 
-
-
 <!--Importando todos os produtos-->
 
 <div class="container ">
   <div class="row card-section">
-    <div class="col-4 m-0 p-2 " *ngFor="let product of filteredProducts">
+    <div class="col-4 m-0 p-1 " *ngFor="let product of filteredProducts">
       <div class="card" (click)="abrirModalDetalhesProduto(product)" >
         <img src="{{ product.imageUrl }}" alt="{{ product.name }}" class="custom-image">
         <div class="card-body text-right">
           <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">R$ {{ product.price }}</p>
+          <p class="card-text">R$ {{ product.price }},00</p>
         </div>
       </div>
     </div>
@@ -50,31 +48,43 @@
 <!--Modal Detalhe Produtos-->
 
 <ng-template #modalDetalhesProduto>
-  <div class="modal-header bg-primary text-white ">
-    <h4 class="modal-title ">{{ produtoDetalhado.name }}</h4>
+  <div class="modal-header custom-modal-header text-white">
+    <h4 class="modal-title">{{ produtoDetalhado.name }}</h4>
     <button type="button" class="btn-close close" aria-label="Close" (click)="modalRef?.hide()"></button>
   </div>
   <div class="modal-body">
-    <div class="text-center">
-      <img src="{{ produtoDetalhado.imageUrl }}" alt="{{ produtoDetalhado.name }}" class="custom-image img-fluid">
-    </div>
-    <h5>Descrição:</h5>
-    <p>{{ produtoDetalhado.description }}</p>
-    <p>Preço: R$ {{ produtoDetalhado.price }}</p>
-    <!-- Controles de quantidade com tamanho maior -->
-    <div class="d-flex align-items-center justify-content-center mt-3">
-      <button class="btn btn-link btn-lg" (click)="diminuirQuantidade()">-</button>
-      <span class="mx-3 fs-4">{{ quantidadeSelecionada }}</span>
-      <button class="btn btn-link btn-lg" (click)="aumentarQuantidade()">+</button>
-    </div>
-    <!-- Botão "Adicionar ao Carrinho" -->
-    <div class="p-3 shoe text-center text-white mt-3 cursor">
-      <button class="btn btn-primary btn-block" (click)="adicionarAoCarrinho(produtoDetalhado)">
-        {{ estaNoCarrinho(produtoDetalhado) ? 'Adicionar Mais' : 'Adicionar no Carrinho' }}
-      </button>
+    <div class="row">
+      <!-- Imagem preenchendo 50% do tamanho do modal -->
+      <div class="img-modal">
+        <img src="{{ produtoDetalhado.imageUrl }}" alt="{{ produtoDetalhado.name }}" class="custom-image-detalhes img-fluid">
+      </div>
+      <div class="col-12 col-md-6">
+        <!-- Descrição -->
+        <p>Ingredientes: {{ produtoDetalhado.description }}</p>
+        <!-- Preço -->
+        <h5>R$ {{ produtoDetalhado.price }},00</h5>
+        
+        <!-- Controles de quantidade -->
+        <div class="d-flex align-items-center justify-content-between mt-3">
+          <div class="d-flex align-items-center">
+            <button class="btn btn-link btn-lg" (click)="diminuirQuantidade()">-</button>
+            <span class="mx-3 fs-4">{{ quantidadeSelecionada }}</span>
+            <button class="btn btn-link btn-lg" (click)="aumentarQuantidade()">+</button>
+          </div>
+          
+          <!-- Botão "Adicionar ao Carrinho" -->
+          <div class="shoe text-center text-white cursor">
+            <button class="btn btn-primary custom-primary-button  btn-block btn-block mb-3 no-border" (click)="adicionarAoCarrinho(produtoDetalhado)">
+              Adicionar    R${{ quantidadeSelecionada * produtoDetalhado.price }},00
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </ng-template>
+
+
 
 
 
