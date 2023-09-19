@@ -19,7 +19,10 @@ export class ProductsComponent {
   cancelarClicado: boolean = false;
   carrinho: any[] = [];
   modalRef?: BsModalRef;
-  title: string = 'Título Padrão';
+  title: string = '';
+  produtoDetalhado: any;
+  quantidadeSelecionada: number = 1; // Inicialmente, a quantidade é 1
+  showSearchBar: boolean = false;
 
   allProducts: Product[] = [
     {
@@ -28,6 +31,7 @@ export class ProductsComponent {
       name: 'Bolo de Morango',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolodedepote.jpeg',
+      keywords: 'morango',
       price: 12,
     },
     {
@@ -36,6 +40,7 @@ export class ProductsComponent {
       name: 'Trufa Recheada',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolofatia.jpeg',
+      keywords: 'chocolate',
       price: 15,
     },
     {
@@ -44,6 +49,7 @@ export class ProductsComponent {
       name: 'Bolo com uva',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/cone.jpeg',
+      keywords: 'uva',
       price: 16,
     },
     {
@@ -52,6 +58,7 @@ export class ProductsComponent {
       name: 'Bolo de Morango',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolodedepote.jpeg',
+      keywords: 'morango',
       price: 12,
     },
     {
@@ -60,6 +67,7 @@ export class ProductsComponent {
       name: 'Trufa Recheada',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolofatia.jpeg',
+      keywords: 'morango',
       price: 15,
     },
     {
@@ -68,6 +76,7 @@ export class ProductsComponent {
       name: 'Bolo com uva',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/cone.jpeg',
+      keywords: 'morango',
       price: 16,
     },
     {
@@ -76,6 +85,7 @@ export class ProductsComponent {
       name: 'Bolo de Morango',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolodedepote.jpeg',
+      keywords: 'morango',
       price: 12,
     },
     {
@@ -84,6 +94,7 @@ export class ProductsComponent {
       name: 'Trufa Recheada',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolofatia.jpeg',
+      keywords: 'morango',
       price: 15,
     },
     {
@@ -92,6 +103,7 @@ export class ProductsComponent {
       name: 'Bolo com uva',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/cone.jpeg',
+      keywords: 'morango',
       price: 16,
     },
     {
@@ -100,6 +112,7 @@ export class ProductsComponent {
       name: 'Bolo de Morango',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolodedepote.jpeg',
+      keywords: 'morango',
       price: 12,
     },
     {
@@ -108,6 +121,7 @@ export class ProductsComponent {
       name: 'Trufa Recheada',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolofatia.jpeg',
+      keywords: 'morango',
       price: 15,
     },
     {
@@ -116,6 +130,7 @@ export class ProductsComponent {
       name: 'Bolo com uva',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/cone.jpeg',
+      keywords: 'morango',
       price: 16,
     },
     {
@@ -124,6 +139,7 @@ export class ProductsComponent {
       name: 'Bolo de Morango',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolodedepote.jpeg',
+      keywords: 'morango',
       price: 12,
     },
     {
@@ -132,6 +148,7 @@ export class ProductsComponent {
       name: 'Trufa Recheada',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolofatia.jpeg',
+      keywords: 'morango',
       price: 15,
     },
     {
@@ -140,6 +157,7 @@ export class ProductsComponent {
       name: 'Bolo com uva',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/cone.jpeg',
+      keywords: 'morango',
       price: 16,
     },
     {
@@ -148,6 +166,7 @@ export class ProductsComponent {
       name: 'Bolo com uva',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/cone.jpeg',
+      keywords: 'morango',
       price: 16,
     },
     {
@@ -156,6 +175,7 @@ export class ProductsComponent {
       name: 'Bolo de Morango',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolodedepote.jpeg',
+      keywords: 'morango',
       price: 12,
     },
     {
@@ -164,6 +184,7 @@ export class ProductsComponent {
       name: 'Trufa Recheada',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolofatia.jpeg',
+      keywords: 'morango',
       price: 15,
     },
     {
@@ -172,6 +193,7 @@ export class ProductsComponent {
       name: 'Bolo com uva',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/cone.jpeg',
+      keywords: 'morango',
       price: 16,
     },
     {
@@ -180,6 +202,7 @@ export class ProductsComponent {
       name: 'Bolo de Morango',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolodedepote.jpeg',
+      keywords: 'morango',
       price: 12,
     },
     {
@@ -188,6 +211,7 @@ export class ProductsComponent {
       name: 'Trufa Recheada',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolofatia.jpeg',
+      keywords: 'morango',
       price: 15,
     },
     {
@@ -196,6 +220,7 @@ export class ProductsComponent {
       name: 'Bolo com uva',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/cone.jpeg',
+      keywords: 'morango',
       price: 16,
     },
     {
@@ -204,6 +229,7 @@ export class ProductsComponent {
       name: 'Bolo de Morango',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolodedepote.jpeg',
+      keywords: 'morango',
       price: 12,
     },
     {
@@ -212,6 +238,7 @@ export class ProductsComponent {
       name: 'Trufa Recheada',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolofatia.jpeg',
+      keywords: 'morango',
       price: 15,
     },
     {
@@ -220,6 +247,7 @@ export class ProductsComponent {
       name: 'Bolo com uva',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/cone.jpeg',
+      keywords: 'morango',
       price: 16,
     },
     {
@@ -228,6 +256,7 @@ export class ProductsComponent {
       name: 'Trufa Recheada',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/bolofatia.jpeg',
+      keywords: 'morango',
       price: 15,
     },
     {
@@ -236,6 +265,7 @@ export class ProductsComponent {
       name: 'Bolo com uva',
       description: 'Bolo com pedaços de morango',
       imageUrl: './assets/img/cone.jpeg',
+      keywords: 'morango',
       price: 16,
     },
     // Adicione outros produtos fictícios aqui
@@ -261,31 +291,66 @@ export class ProductsComponent {
       this.allProducts.filter(product => product.category === category);
   }
 
+  //filtrar por pesquisa
+
   loadProducts() {
     // Inicialmente, exiba todos os produtos
     this.filteredProducts = this.allProducts;
   }
+
+  //modal para detalhes do produto
+
+  abrirModalDetalhesProduto(product: any) {
+    this.produtoDetalhado = product;
+    this.modalRef = this.modalService.show(this.modalDetalhesProduto);
+  }
   
-  openModal(buttonNumber: number) {
-    this.title = 'Comprar produtos';
-    this.cancelarClicado = false;
-    this.modalRef = this.modalService.show(this.modalTemplate);
+  fecharModalDetalhesProduto() {
+    this.modalRef?.hide();
   }
 
-  adicionarAoCarrinho(product: Product) {
-    const itemNoCarrinho = this.getCarrinhoItem(product);
+  adicionarAoCarrinho(produto: Product) {
+    const itemNoCarrinho = this.getCarrinhoItem(produto);
   
     if (itemNoCarrinho) {
-      itemNoCarrinho.quantidade++;
+      // Se o produto já estiver no carrinho, atualize a quantidade com base na quantidade selecionada
+      itemNoCarrinho.quantidade += this.quantidadeSelecionada;
     } else {
-      const newItem = { ...product, quantidade: 1 };
+      // Se o produto não estiver no carrinho, crie um novo item no carrinho com a quantidade selecionada
+      const newItem = { ...produto, quantidade: this.quantidadeSelecionada };
       this.carrinho.push(newItem);
     }
   
+    // Limpe a quantidade selecionada
+    this.quantidadeSelecionada = 1;
+  
+    // Feche o modal após adicionar ao carrinho
+    this.modalRef?.hide();
+  
+    // Atualize o preço total do carrinho
     this.itenTotal = this.calcularItenTotal();
     this.precoTotal = this.calcularPrecoTotal();
-    this.carrinhoService.adicionarProdutoAoCarrinho(product);
+    this.carrinhoService.adicionarProdutoAoCarrinho(produto);
   }
+
+  aumentarQuantidade() {
+    this.quantidadeSelecionada++;
+  }
+
+  diminuirQuantidade() {
+    if (this.quantidadeSelecionada > 1) {
+      this.quantidadeSelecionada--;
+    }
+  }
+
+  //modal finalizar compra
+  
+  openModal(buttonNumber: number) {
+    this.title = 'Carrinho';
+    this.cancelarClicado = false;
+    this.modalRef = this.modalService.show(this.modalTemplate);
+  }
+  
   
   removerDoCarrinho(item: any) {
     if (item.quantidade === 1) {
@@ -327,6 +392,10 @@ export class ProductsComponent {
   }
   
   @ViewChild('modalTemplate') modalTemplate!: string;
+
+  @ViewChild('modalDetalhesProduto') modalDetalhesProduto!: string;
+
+  
   
 }
 
