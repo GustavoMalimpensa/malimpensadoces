@@ -1,0 +1,153 @@
+/* CSS personalizado */
+.custom-primary-button {
+    background-color: #cb0606; /* Substitua isso pela cor desejada em formato hexadecimal ou nome da cor */
+    color: #FFFFFF; /* Cor do texto no botão */
+}
+
+.no-border {
+    border: none !important;
+}
+
+/* Defina a altura máxima da seção de cards e permita a rolagem */
+.card-section {
+    max-height: 60vh; /* Ajuste a altura máxima conforme necessário */
+    overflow-y: auto; /* Adicione barras de rolagem vertical quando necessário */
+}
+
+.categories {
+list-style: none;
+padding: 0;
+display: flex;
+justify-content: center;
+border-bottom: 1px solid #dbd6d6; /* Linha inferior */
+flex-wrap: wrap; /* Permitir que os filtros quebrem para uma nova linha em telas menores */
+}
+
+.categories li {
+margin-right: 20px; /* Espaçamento entre os filtros */
+position: relative;
+flex: 1; /* Distribuir espaço igualmente entre os filtros */
+max-width: 150px; /* Largura máxima dos filtros */
+text-align: center;
+}
+
+.categories a {
+color: #6e6e6e;
+font-size: 16px; /* Tamanho de fonte menor para telas menores */
+line-height: 20px;
+font-weight: 600;
+text-transform: capitalize;
+padding: 15px 0;
+position: relative;
+white-space: nowrap; /* Impedir que o texto seja quebrado em várias linhas */
+overflow: hidden;
+text-overflow: ellipsis; /* Adicionar reticências se o texto for muito longo */
+}
+
+/* Linha inferior que segue o texto ativo */
+.categories a.active::before {
+content: "";
+position: absolute;
+left: 0;
+bottom: 0;
+background: #cd0d0d;
+width: 100%;
+height: 2px;
+transition: width 0.4s;
+}
+
+/* Efeito de largura da linha quando hover */
+.categories a:hover::before {
+width: 0;
+}
+
+/* Estilo para o filtro ativo */
+.categories a.active {
+color: #cd0d0d;
+}
+
+/* Media query para ajustar o tamanho da fonte em telas menores */
+@media screen and (max-width: 768px) {
+.categories a {
+    font-size: 14px; /* Tamanho de fonte ainda menor para telas menores */
+}
+
+/* Remover a linha inferior em telas menores */
+.categories a.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #cd0d0d;
+    width: 100%;
+    height: 2px;
+    transition: width 0.4s;
+}
+}
+  
+/*fim da estilização do filtro*/
+
+
+.conteiner{
+    margin-top: 110px;
+}
+
+.card {
+    border: none;
+    outline: none;
+    background-color: floralwhite;
+    border-radius: 20px;
+}
+
+.card:hover{
+    transform: translate(-15px);
+    transition: transform .3s;
+}
+
+.card-body {
+    background-color: #9b9999;
+}
+
+.card-title {
+    font-size: 10px;
+    color: #dee2e6;
+}
+
+.card-text {
+    font-size: 10px;
+    color: #dee2e6;
+}
+
+.custom-image {
+    position: relative; 
+    max-height: 200px;
+    height: 200px; /* Defina a altura desejada */
+    width: auto; /* Largura automática para manter a proporção */
+    object-fit: cover; /* Mantém a proporção e corta o excesso */
+}
+
+
+/* Media query para telas pequenas */
+@media screen and (max-width: 768px) {
+
+    /* Ajuste a largura e o espaçamento conforme necessário para telas menores */
+    .card:hover {
+        transform: none;
+    }
+
+    .text1 {
+        font-size: 12px; /* Tamanho de fonte menor para telas menores */
+    }
+
+    .custom-image {
+        height: 100px; /* Defina a altura desejada */
+        width: auto; /* Largura automática para manter a proporção */
+        object-fit: cover; /* Mantém a proporção e corta o excesso */
+    }
+}
+
+/* CSS personalizado */
+.custom-button-height {
+    width: 330px; /* Altura desejada em pixels */
+}
+  
