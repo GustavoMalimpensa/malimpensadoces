@@ -4,6 +4,7 @@ import { FinalizeOrderComponent } from './finalize-order/finalize-order.componen
 import { OrderComponent } from './order.component';
 import { CarrinhoService } from '../services/carrinho.service';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { HeaderComponent } from './header/header.component';
     HeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [CarrinhoService]
 })

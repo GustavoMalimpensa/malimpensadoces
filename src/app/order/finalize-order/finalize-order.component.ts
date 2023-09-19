@@ -8,6 +8,7 @@ import { CarrinhoService } from '../../services/carrinho.service';
 })
 export class FinalizeOrderComponent implements OnInit {
 
+  metodoEntregaOpcao: string = 'entregar'; // Declare a variável
   metodoPagamento: string = 'pix';
   metodoEntrega: string = 'retirar';
   enderecoEntrega: string = '';
@@ -22,7 +23,10 @@ export class FinalizeOrderComponent implements OnInit {
     this.produtosDoCarrinho = this.carrinhoService.obterProdutosDoCarrinho();
   }
 
-  
+  toggleEntregaOpcao() {
+    // Implemente a função
+  }
+
   calcularPrecoTotal(): number {
     let total = 0;
     for (const item of this.produtosDoCarrinho) {

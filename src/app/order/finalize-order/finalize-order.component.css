@@ -1,0 +1,27 @@
+/* CSS personalizado */
+.custom-primary-button {
+    background-color: #cb0606; /* Substitua isso pela cor desejada em formato hexadecimal ou nome da cor */
+    color: #FFFFFF; /* Cor do texto no botão */
+}
+
+.no-border {
+    border: none !important;
+}
+
+/* CSS personalizado */
+.custom-button-height {
+    width: 330px; /* Altura desejada em pixels */
+}
+  
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Isso centralizará horizontalmente o contêiner */
+}
+
+.form-group {
+    width: 80%;
+}
+  
