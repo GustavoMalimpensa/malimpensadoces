@@ -12,7 +12,11 @@
     color: #9b9999;
 }
 
-
 .navbar {
     background-color: rgb(255, 255, 255);
 }
+
+.navbar-toggler-icon {
+    color: #FF0000; /* Substitua #FF0000 pela cor desejada em formato hexadecimal ou nome da cor */
+}
+
