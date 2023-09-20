@@ -1,28 +1,48 @@
-<div class="container mt-5">
-  <h2 class="text-center">Finalizar pedido</h2>
-  <div class="modal-body">
-    <div *ngIf="produtosDoCarrinho.length > 0; else carrinhoVazio" class="row mb-3">
-      <div class="col" *ngFor="let produto of produtosDoCarrinho">
+
+<div class="container">
+  <strong>Carrinho:</strong>
+  <div *ngIf="produtosDoCarrinho.length > 0; else carrinhoVazio"></div>
+  <div *ngFor="let produto of produtosDoCarrinho" class="container custom-content mt-3">
+    <div class="row" type="text">
+
+      <div class="col">
         <img src="{{ produto.imageUrl }}" alt="{{ produto.name }}" class="custom-small-square-image">
       </div>
-      <div class="col" *ngFor="let produto of produtosDoCarrinho">
-        <div class="col align-self-start nome-modal">
-          <strong class="nome-modal">{{ produto.name }}</strong>
-        </div>
-        <div class="col align-self-start quantidade-modal">
+   
+      <div class="col nome-modal">
+        <strong class="nome-modal">{{ produto.name }}</strong>
+      </div>
+ 
+      <div class="col">
+        <div class=" quantidade-modal">
           <h5 class="quantidade-modal">Quantidade: {{ produto.quantidade }}</h5>
         </div>
-        <div class="col align-self-start preco-total-modal">
+        <div class=" preco-total-modal">
           <strong>Preço total: R$ {{ produto.price * produto.quantidade }},00</strong>
         </div>
       </div>
-    </div> 
-  <ng-template #carrinhoVazio>
-    <p class="text-center">Seu carrinho de compras está vazio.</p>
-  </ng-template>
+    </div>
 </div>
 
-  
+<ng-template #carrinhoVazio>
+  <p class="text-center">Seu carrinho de compras está vazio.</p>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <form class="conteiner">
   <hr>
   <div class="container">

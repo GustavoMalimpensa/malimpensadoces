@@ -53,6 +53,16 @@ export class FinalizeOrderComponent implements OnInit {
     return total;
   }
 
+  calcularPrecoTotalCompra(): number {
+    
+    let total = 0;
+  
+    for (const produto of this.produtosDoCarrinho) {
+      total += produto.price * produto.quantidade;
+    }
+    return total;
+  }
+
 
   // Função para formatar a hora
   formatHorario(date: Date): string {
@@ -67,15 +77,7 @@ export class FinalizeOrderComponent implements OnInit {
     return num < 10 ? `0${num}` : `${num}`;
   }
 
-  calcularPrecoTotalCompra(): number {
-    let total = 0;
   
-    for (const produto of this.produtosDoCarrinho) {
-      total += produto.price * produto.quantidade;
-    }
-  
-    return total;
-  }
     
 
   // Função para habilitar a edição do horário personalizado
