@@ -4,8 +4,25 @@
     color: #FFFFFF; /* Cor do texto no botão */
 }
 
+.custom-content {
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
 .no-border {
     border: none !important;
+}
+
+.button-product {
+    padding: 12px;
+}
+
+.button-quantidade {
+    text-decoration: none;
+    color: #cb0606;
 }
 
 .custom-image-detalhes {

@@ -65,19 +65,22 @@
         <h5>R$ {{ produtoDetalhado.price }},00</h5>
         
         <!-- Controles de quantidade -->
-        <div class="d-flex align-items-center justify-content-between mt-3">
-          <div class="d-flex align-items-center">
-            <button class="btn btn-link btn-lg" (click)="diminuirQuantidade()">-</button>
-            <span class="mx-3 fs-4">{{ quantidadeSelecionada }}</span>
-            <button class="btn btn-link btn-lg" (click)="aumentarQuantidade()">+</button>
+        <div class="d-flex align-items-center justify-content-between mt-3 conteiner">
+
+          <div class="d-flex align-items-center custom-content">
+            <button class="btn btn-link btn-lg button-quantidade" (click)="diminuirQuantidade()">-</button>
+            <span class="mx-3 fs-3">{{ quantidadeSelecionada }}</span>
+            <button class="btn btn-link btn-lg button-quantidade" (click)="aumentarQuantidade()">+</button>
           </div>
-          
+
+
           <!-- Botão "Adicionar ao Carrinho" -->
-          <div class="shoe text-center text-white cursor">
-            <button class="btn btn-primary custom-primary-button  btn-block btn-block mb-3 no-border" (click)="adicionarAoCarrinho(produtoDetalhado)">
+          <div class="shoe text-center text-white cursor ">
+            <button class="btn btn-primary custom-primary-button button-product btn-block btn-block no-border" (click)="adicionarAoCarrinho(produtoDetalhado)">
               Adicionar    R${{ quantidadeSelecionada * produtoDetalhado.price }},00
             </button>
           </div>
+
         </div>
       </div>
     </div>
@@ -100,33 +103,28 @@
     </div>
   </div>
   <div class="modal-body">
-    <div *ngFor="let item of carrinho" class="d-flex mb-3">
-
-
+    <div *ngFor="let item of carrinho">
       <div class="row">
-        <div class="col-6 col-md-4">
+        <div class="col">
           <img src="{{ item.imageUrl }}" alt="{{ item.name }}" class="custom-small-square-image">
         </div>
-        <div class="col-6 col-md-4">
-          <div class="nome-modal col align-self-start">
+        <div class="col">
+          <div class="nome-modal mb-2 col align-self-start">
             <h5 class="nome-modal">{{ item.name }}</h5>
           </div>
-
           <div class="quantidade-modal col align-self-start">
             <p  class="quantidade-modal">Quantidade: {{ item.quantidade }}</p>
           </div>
-           
           <div class="col align-self-start preco-total-modal">
             <p>Total: R$ {{ item.price * item.quantidade }},00</p>
           </div>
         </div>
-        <div class="col-6 col-md-4">
+        <div class="col d-flex align-items-center">
           <button class="btn btn-danger" (click)="removerDoCarrinho(item)">Remover</button>
         </div>
-      </div>
+      </div> 
     </div>
-    
-
+    <hr>
     <div *ngIf="carrinho.length > 0" class="row d-flex justify-content-between">
       <div class="col-6">
         <p>Total:</p>
