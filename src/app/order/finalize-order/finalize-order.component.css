@@ -21,7 +21,35 @@
     margin: 0 auto; /* Isso centralizará horizontalmente o contêiner */
 }
 
-.form-group {
+
+.custom-content {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
     width: 80%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.custom-content:hover {
+border-color: red;
+}
+
+.custom-content input[type="radio"]:checked + .bolinha {
+background-color: red;
+border-color: red;
+}
+
+
+
+/* Media query para ajustar o tamanho da fonte em telas menores */
+@media screen and (max-width: 768px) {
+    .categories a {
+        font-size: 14px; /* Tamanho de fonte ainda menor para telas menores */
+    }
+    .custom-content {
+        width: 100%;
+    }
 }
   

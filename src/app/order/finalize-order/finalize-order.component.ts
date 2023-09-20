@@ -15,16 +15,32 @@ export class FinalizeOrderComponent implements OnInit {
   dataHora: string = '';
   numeroLoja: string = '+5519999372133';
   produtosDoCarrinho: any[] = []; // Declare a propriedade produtosDoCarrinho aqui
+  tipoEntrega: string = ''; // Variável para armazenar o tipo de entrega
+  defaultHorario: string;
+  editandoHorario: boolean = false;
+  horarioPersonalizado: string = '';
 
-  constructor(private carrinhoService: CarrinhoService ) {}
+  constructor(private carrinhoService: CarrinhoService ) {
+    // Obtém a hora atual
+    const currentDate = new Date();
+    currentDate.setHours(currentDate.getHours() + 1);
+
+    // Formata a hora no formato 'hh:mm'
+    this.defaultHorario = this.formatHorario(currentDate);
+  }
 
   ngOnInit() {
     // Obtenha os produtos do carrinho usando o serviço
     this.produtosDoCarrinho = this.carrinhoService.obterProdutosDoCarrinho();
   }
 
-  toggleEntregaOpcao() {
-    // Implemente a função
+  toggleEndereco() {
+    if (this.tipoEntrega === 'entregar') {
+      // Se a opção "Entrega no Endereço" estiver selecionada, mostre o campo de endereço
+      return true;
+    }
+    // Caso contrário, oculte o campo de endereço
+    return false;
   }
 
   calcularPrecoTotal(): number {
@@ -35,6 +51,23 @@ export class FinalizeOrderComponent implements OnInit {
     return total;
   }
 
+   // Função para formatar a hora
+   formatHorario(date: Date): string {
+    const hours = this.padZeroes(date.getHours());
+    const minutes = this.padZeroes(date.getMinutes());
+
+    return `${hours}:${minutes}`;
+  }
+
+  // Função auxiliar para adicionar zeros à esquerda
+  padZeroes(num: number): string {
+    return num < 10 ? `0${num}` : `${num}`;
+  }
+
+  // Função para habilitar a edição do horário personalizado
+  editarHorario() {
+    this.editandoHorario = true;
+  }
   concluirCompra() {
     if (this.produtosDoCarrinho.length === 0) {
       return;

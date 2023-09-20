@@ -1,5 +1,5 @@
 <div class="container mt-5">
-    <h2 class="text-center">Carrinho</h2>
+    <h2 class="text-center">Finalizar pedido</h2>
     <div *ngIf="produtosDoCarrinho.length > 0; else carrinhoVazio">
       <ul>
         <li *ngFor="let produto of produtosDoCarrinho">
@@ -23,30 +23,69 @@
 </div>
   
 <form class="conteiner">
-  <div class="form-group">
-    <strong for="metodoPagamento">Método de Pagamento:</strong>
-    <select class="form-control" id="metodoPagamento">
-      <option value="pix">Pix</option>
-      <option value="debito">Cartão de Débito</option>
-      <option value="credito">Cartão de Crédito</option>
-      <option value="pagarDepois">Vou Pagar Depois</option>
-    </select>
+  <hr>
+  <div class="container">
+    <strong>Tipo de entrega:</strong>
+    <div class="row custom-content mt-3" type="text">
+      <div class="col-6">
+        <strong class="custom-control-label " for="retirar">Retirar pedido</strong>
+      </div>
+      <div class="col">
+        <div>Grátis</div>
+      </div>
+      <div class="col">
+        <input type="radio" id="retirar" [(ngModel)]="tipoEntrega" name="tipoEntrega" class="custom-control-input  custom-radio" value="retirar">
+      </div>
+    </div>
+    <div class="row custom-content mt-2">
+      <div class="col-6">
+        <strong class="custom-control-label" for="entregar">Entregar pedido</strong>
+      </div>
+      <div class="col">
+        <div>R$10,00</div>
+      </div>
+      <div class="col">
+        <input type="radio" id="entregar" [(ngModel)]="tipoEntrega" name="tipoEntrega" class="custom-control-input" value="entregar">
+      </div>
+      <div class="form-group text-center mt-2" *ngIf="toggleEndereco()">
+        <label for="enderecoEntrega ">Endereço da Entrega:</label>
+        <input type="text" class="form-control" id="enderecoEntrega" name="enderecoEntrega">
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="metodoEntrega">Entrega do produto:</label>
-    <select class="form-control" id="metodoEntrega">
-      <option value="retirar">Retirar no local</option>
-      <option value="entregar">Entrega no Endereço:</option>
-    </select>
+
+  <hr>
+  
+  <div class="container mt-3">
+    <strong class="text-center">Horario da entrega/retirada:</strong>
+    <div class="row custom-content mt-3">
+      <div class="col">
+        <strong for="metodoHorario">Horário:</strong>
+      </div>
+      <div class="col">
+        <input type="time" class="form-control" id="horarioPadrao" [value]="defaultHorario">
+      </div>
+    </div>
   </div>
-  <div class="form-group" *ngIf="metodoEntrega === 'entregar'">
-    <label for="endereco">Endereço de Entrega:</label>
-    <input type="text" class="form-control" id="endereco">
+
+  <hr>
+
+  <div class="container mt-3">
+    <strong class="text-center">Método de Pagamento:</strong>
+    <div class="row custom-content mt-3">
+      <div class="col">
+        <strong for="metodoHorario">Pagamento:</strong>
+      </div>
+      <div class="col">
+        <select class="form-control " id="metodoPagamento">
+          <option value="pix">Pix</option>
+          <option value="debito">Cartão de Débito na entrega</option>
+          <option value="credito">Cartão de Crédito na entrega</option>
+        </select>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="dataHora">Data e Hora:</label>
-    <input type="datetime-local" class="form-control" id="dataHora">
-  </div>
+  <hr>
 </form>
 
 <li *ngFor="let produto of produtosDoCarrinho">
