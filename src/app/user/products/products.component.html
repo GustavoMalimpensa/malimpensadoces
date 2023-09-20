@@ -58,7 +58,7 @@
       <div class="img-modal">
         <img src="{{ produtoDetalhado.imageUrl }}" alt="{{ produtoDetalhado.name }}" class="custom-image-detalhes img-fluid">
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 mt-3">
         <!-- Descrição -->
         <p>Ingredientes: {{ produtoDetalhado.description }}</p>
         <!-- Preço -->
@@ -91,7 +91,7 @@
 <!--Modal Carrinho de Compras-->
 
 <ng-template #modalTemplate>
-  <div class="modal-header bg-primary text-white">
+  <div class="modal-header custom-modal-header text-white">
     <div class="x-model">
       <button type="button" class="btn-close close" aria-label="Close" (click)="modalRef?.hide()"></button>
     </div>
@@ -99,24 +99,24 @@
       <h4 class="modal-title mx-auto">Carrinho</h4>
     </div>
     <div class="limpar-model">
-      <button type="button" class="btn btn-secondary" (click)="modalRef?.hide()">Limpar</button>
+      <button type="button" class="btn btn-secondary" (click)="limparCarrinho()">Limpar</button>
     </div>
   </div>
   <div class="modal-body">
     <div *ngFor="let item of carrinho">
-      <div class="row">
+      <div class="row mb-3">
         <div class="col">
           <img src="{{ item.imageUrl }}" alt="{{ item.name }}" class="custom-small-square-image">
         </div>
         <div class="col">
-          <div class="nome-modal mb-2 col align-self-start">
-            <h5 class="nome-modal">{{ item.name }}</h5>
+          <div class="col align-self-start nome-modal ">
+            <strong class="nome-modal">{{ item.name }}</strong>
           </div>
-          <div class="quantidade-modal col align-self-start">
-            <p  class="quantidade-modal">Quantidade: {{ item.quantidade }}</p>
+          <div class="col align-self-start quantidade-modal">
+            <h5  class="quantidade-modal">Quantidade: {{ item.quantidade }}</h5>
           </div>
           <div class="col align-self-start preco-total-modal">
-            <p>Total: R$ {{ item.price * item.quantidade }},00</p>
+            <strong>Total: R$ {{ item.price * item.quantidade }},00</strong>
           </div>
         </div>
         <div class="col d-flex align-items-center">
@@ -124,48 +124,23 @@
         </div>
       </div> 
     </div>
-    <hr>
-    <div *ngIf="carrinho.length > 0" class="row d-flex justify-content-between">
-      <div class="col-6">
-        <p>Total:</p>
-      </div>
-      <div class="col-6">
-        <p>R$ {{ precoTotal }}</p>
-      </div>
-    </div>
   </div>
-  <div class="modal-footer">
-    <button class="btn btn-primary custom-primary-button btn-block custom-button-height no-border" (click)="finalizarCompra()">
-      Continuar
-    </button>
-  </div>
-</ng-template>
-
-
-
   
-<!--Criação posterior do modal
-
-<div class="container mb-5 mt-5">
-  <div class="row">
-    <div class="col-4" *ngFor="let product of filteredProducts">
-      <div class="card mb-3">
-        <img src="{{ product.imageUrl }}" alt="{{ product.name }}" class="card-img-top">
-        <div class="card-body text-center">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">{{ product.description }}</p>
-          <p class="card-text">R$ {{ product.price }}</p>
-          <div class="star mt-3 align-item-center">
-            
-          </div>
-          <div class="p-3 shoe text-center text-white mt-3 cursor">
-            <button class="btn btn-primary btn-block" (click)="adicionarAoCarrinho(product)">
-              {{ estaNoCarrinho(product) ? 'Adicionar Mais' : 'Adicionar no Carrinho' }}
-            </button>
-          </div>
+  
+    <div class="modal-footer row">
+      <div *ngIf="carrinho.length > 0" class="col d-flex justify-content-between">
+        <div class="col">
+          <Strong>Preço Total:</Strong>
+        </div>
+        <div class="col modal-carinho-final">
+          <strong>R$ {{ precoTotal }}</strong>
         </div>
       </div>
+      
+      <div>
+        <button class="btn btn-primary custom-primary-button btn-block custom-button-height no-border" (click)="finalizarCompra()">
+          Continuar
+        </button>
+      </div>
     </div>
-  </div>
-</div>
--->
+</ng-template>

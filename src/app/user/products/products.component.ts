@@ -33,6 +33,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolodedepote.jpeg',
       keywords: 'morango',
       price: 12.00,
+      quantidade: 1,
     },
     {
       id: 2,
@@ -42,6 +43,8 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolofatia.jpeg',
       keywords: 'chocolate',
       price: 15.00,
+      quantidade: 1,
+      
     },
     {
       id: 3,
@@ -51,6 +54,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/cone.jpeg',
       keywords: 'uva',
       price: 16.00,
+      quantidade: 1,
     },
     {
       id: 4,
@@ -60,6 +64,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolodedepote.jpeg',
       keywords: 'morango',
       price: 12.00,
+      quantidade: 1,
     },
     {
       id: 5,
@@ -69,6 +74,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolofatia.jpeg',
       keywords: 'morango',
       price: 15.00,
+      quantidade: 1,
     },
     {
       id: 6,
@@ -78,6 +84,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/cone.jpeg',
       keywords: 'morango',
       price: 16.00,
+      quantidade: 1,
     },
     {
       id: 7,
@@ -87,6 +94,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolodedepote.jpeg',
       keywords: 'morango',
       price: 12.00,
+      quantidade: 1,
     },
     {
       id: 8,
@@ -96,6 +104,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolofatia.jpeg',
       keywords: 'morango',
       price: 15.00,
+      quantidade: 1,
     },
     {
       id: 9,
@@ -105,6 +114,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/cone.jpeg',
       keywords: 'morango',
       price: 16.00,
+      quantidade: 1,
     },
     {
       id: 10,
@@ -114,6 +124,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolodedepote.jpeg',
       keywords: 'morango',
       price: 12.00,
+      quantidade: 1,
     },
     {
       id: 11,
@@ -123,6 +134,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolofatia.jpeg',
       keywords: 'morango',
       price: 15.00,
+      quantidade: 1,
     },
     {
       id: 12,
@@ -132,6 +144,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/cone.jpeg',
       keywords: 'morango',
       price: 16,
+      quantidade: 1,
     },
     {
       id: 13,
@@ -141,6 +154,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolodedepote.jpeg',
       keywords: 'morango',
       price: 12,
+      quantidade: 1,
     },
     {
       id: 14,
@@ -150,6 +164,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolofatia.jpeg',
       keywords: 'morango',
       price: 15,
+      quantidade: 1,
     },
     {
       id: 15,
@@ -159,6 +174,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/cone.jpeg',
       keywords: 'morango',
       price: 16,
+      quantidade: 1,
     },
     {
       id: 16,
@@ -168,6 +184,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/cone.jpeg',
       keywords: 'morango',
       price: 16,
+      quantidade: 1,
     },
     {
       id: 17,
@@ -177,6 +194,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolodedepote.jpeg',
       keywords: 'morango',
       price: 12,
+      quantidade: 1,
     },
     {
       id: 18,
@@ -186,6 +204,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolofatia.jpeg',
       keywords: 'morango',
       price: 15,
+      quantidade: 1,
     },
     {
       id: 19,
@@ -195,6 +214,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/cone.jpeg',
       keywords: 'morango',
       price: 16,
+      quantidade: 1,
     },
     {
       id: 20,
@@ -204,6 +224,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolodedepote.jpeg',
       keywords: 'morango',
       price: 12,
+      quantidade: 1,
     },
     {
       id: 21,
@@ -213,6 +234,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolofatia.jpeg',
       keywords: 'morango',
       price: 15,
+      quantidade: 1,
     },
     {
       id: 22,
@@ -222,6 +244,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/cone.jpeg',
       keywords: 'morango',
       price: 16,
+      quantidade: 1,
     },
     {
       id: 23,
@@ -231,6 +254,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolodedepote.jpeg',
       keywords: 'morango',
       price: 12,
+      quantidade: 1,
     },
     {
       id: 24,
@@ -240,6 +264,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolofatia.jpeg',
       keywords: 'morango',
       price: 15,
+      quantidade: 1,
     },
     {
       id: 25,
@@ -249,6 +274,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/cone.jpeg',
       keywords: 'morango',
       price: 16,
+      quantidade: 1,
     },
     {
       id: 26,
@@ -258,6 +284,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/bolofatia.jpeg',
       keywords: 'morango',
       price: 15,
+      quantidade: 1,
     },
     {
       id: 27,
@@ -267,6 +294,7 @@ export class ProductsComponent {
       imageUrl: './assets/img/cone.jpeg',
       keywords: 'morango',
       price: 16,
+      quantidade: 1,
     },
     // Adicione outros produtos fictícios aqui
   ];
@@ -310,6 +338,7 @@ export class ProductsComponent {
   }
 
   adicionarAoCarrinho(produto: Product) {
+    console.log('Adicionando produto ao carrinho:', produto);
     const itemNoCarrinho = this.getCarrinhoItem(produto);
   
     if (itemNoCarrinho) {
@@ -317,8 +346,8 @@ export class ProductsComponent {
       itemNoCarrinho.quantidade += this.quantidadeSelecionada;
     } else {
       // Se o produto não estiver no carrinho, crie um novo item no carrinho com a quantidade selecionada
-      const newItem = { ...produto, quantidade: this.quantidadeSelecionada };
-      this.carrinho.push(newItem);
+      produto.quantidade = this.quantidadeSelecionada;
+      this.carrinho.push(produto);
     }
   
     // Limpe a quantidade selecionada
@@ -335,18 +364,19 @@ export class ProductsComponent {
 
   aumentarQuantidade() {
     this.quantidadeSelecionada++;
+    console.log('Quantidade selecionada aumentada para', this.quantidadeSelecionada);
   }
 
   diminuirQuantidade() {
     if (this.quantidadeSelecionada > 1) {
       this.quantidadeSelecionada--;
+      console.log('Quantidade selecionada diminuída para', this.quantidadeSelecionada);
     }
   }
 
   //modal finalizar compra
   
   openModal(buttonNumber: number) {
-    this.title = 'Carrinho';
     this.cancelarClicado = false;
     this.modalRef = this.modalService.show(this.modalTemplate);
   }

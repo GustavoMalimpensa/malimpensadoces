@@ -1,26 +1,27 @@
 <div class="container mt-5">
-    <h2 class="text-center">Finalizar pedido</h2>
-    <div *ngIf="produtosDoCarrinho.length > 0; else carrinhoVazio">
-      <ul>
-        <li *ngFor="let produto of produtosDoCarrinho">
-          <h3>{{ produto.name }}</h3>
-          <p>Quantidade: {{ produto.quantidade }}</p>
-          <p>Preço Unitário: R$ {{ produto.price }}</p>
-          <p>Preço Total: R$ {{ produto.price * produto.quantidade }}</p>
-        </li>
-      </ul>
-      <!-- Adicione campos de observação, método de pagamento e método de entrega aqui -->
-      <!-- Exemplo:
-      <div class="form-group">
-        <label for="observacao">Observação</label>
-        <textarea id="observacao" class="form-control"></textarea>
+  <h2 class="text-center">Finalizar pedido</h2>
+  <div class="modal-body">
+    <div *ngIf="produtosDoCarrinho.length > 0; else carrinhoVazio" class="row mb-3">
+      <div class="col" *ngFor="let produto of produtosDoCarrinho">
+        <img src="{{ produto.imageUrl }}" alt="{{ produto.name }}" class="custom-small-square-image">
       </div>
-      -->
-    </div>
-    <ng-template #carrinhoVazio>
-      <p class="text-center">Seu carrinho de compras está vazio.</p>
-    </ng-template>
+      <div class="col" *ngFor="let produto of produtosDoCarrinho">
+        <div class="col align-self-start nome-modal">
+          <strong class="nome-modal">{{ produto.name }}</strong>
+        </div>
+        <div class="col align-self-start quantidade-modal">
+          <h5 class="quantidade-modal">Quantidade: {{ produto.quantidade }}</h5>
+        </div>
+        <div class="col align-self-start preco-total-modal">
+          <strong>Preço total: R$ {{ produto.price * produto.quantidade }},00</strong>
+        </div>
+      </div>
+    </div> 
+  <ng-template #carrinhoVazio>
+    <p class="text-center">Seu carrinho de compras está vazio.</p>
+  </ng-template>
 </div>
+
   
 <form class="conteiner">
   <hr>
@@ -88,9 +89,12 @@
   <hr>
 </form>
 
-<li *ngFor="let produto of produtosDoCarrinho">
-  <p>Preço Total: R$ {{ produto.price * produto.quantidade }}</p>
-</li>
+<div class="container mt-5">
+  <h2 class="text-center">Finalizar pedido</h2>
+  <div *ngIf="produtosDoCarrinho.length > 0; else carrinhoVazio">
+    <p>Total da Compra: R$ {{ totalCompra }}</p>
+  </div>
+</div>
 
 <div class=" mb-5 mt-5 text-center">
   <div class="btn btn-primary custom-primary-button no-border custom-image-small custom-button-height mb-3">

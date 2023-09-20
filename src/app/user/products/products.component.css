@@ -39,7 +39,9 @@
 }
 
 .nome-modal{
-    font-size: 12px;
+    font-size: 10px;
+    padding-bottom: 8px;
+    padding-top: 8px;
 }
 
 .quantidade-modal{
@@ -47,16 +49,15 @@
 }
 
 .preco-total-modal{
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .custom-primary-button:active {
     background-color: #cb0606; /* Cor quando o botão está ativo (pressionado) */
-    /* Adicione outros estilos desejados para a pseudo-classe :active, se necessário */
 }
 
 .custom-modal-header {
-    background-color: red; /* Cor de fundo do cabeçalho */
+    background-color:  #cb0606; /* Cor de fundo do cabeçalho */
     color: white; /* Cor do texto no cabeçalho */
 }
 
@@ -205,6 +206,9 @@ color: #cd0d0d;
     width: 330px; /* Altura desejada em pixels */
 }
   
+.modal-carinho-final{
+    text-align: right;
+}
 
 .custom-image-small {
     max-width: max-content;

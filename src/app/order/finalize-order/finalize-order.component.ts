@@ -19,6 +19,8 @@ export class FinalizeOrderComponent implements OnInit {
   defaultHorario: string;
   editandoHorario: boolean = false;
   horarioPersonalizado: string = '';
+  totalCompra: number = 0;
+
 
   constructor(private carrinhoService: CarrinhoService ) {
     // Obtém a hora atual
@@ -51,8 +53,9 @@ export class FinalizeOrderComponent implements OnInit {
     return total;
   }
 
-   // Função para formatar a hora
-   formatHorario(date: Date): string {
+
+  // Função para formatar a hora
+  formatHorario(date: Date): string {
     const hours = this.padZeroes(date.getHours());
     const minutes = this.padZeroes(date.getMinutes());
 
@@ -64,15 +67,27 @@ export class FinalizeOrderComponent implements OnInit {
     return num < 10 ? `0${num}` : `${num}`;
   }
 
+  calcularPrecoTotalCompra(): number {
+    let total = 0;
+  
+    for (const produto of this.produtosDoCarrinho) {
+      total += produto.price * produto.quantidade;
+    }
+  
+    return total;
+  }
+    
+
   // Função para habilitar a edição do horário personalizado
   editarHorario() {
     this.editandoHorario = true;
   }
+
   concluirCompra() {
+
     if (this.produtosDoCarrinho.length === 0) {
       return;
     }
-
     const mensagem =
       'Olá, gostaria de realizar um pedido!\n\n' +
       this.produtosDoCarrinho.map(item => `${item.quantidade}x ${item.name} - R$${(item.price * item.quantidade).toFixed(2)}`).join('\n') +

@@ -6,5 +6,6 @@ export interface Product {
     imageUrl: string;
     keywords: string;
     price: number;
+    quantidade: number;
 }
   
