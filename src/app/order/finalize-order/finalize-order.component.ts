@@ -12,23 +12,17 @@ export class FinalizeOrderComponent implements OnInit {
   metodoPagamento: string = 'pix';
   metodoEntrega: string = 'retirar';
   enderecoEntrega: string = '';
-  dataHora: string = '';
   numeroLoja: string = '+5519999372133';
   produtosDoCarrinho: any[] = []; // Declare a propriedade produtosDoCarrinho aqui
   tipoEntrega: string = ''; // Variável para armazenar o tipo de entrega
-  defaultHorario: string;
+  Horario: string = '';
   editandoHorario: boolean = false;
   horarioPersonalizado: string = '';
   totalCompra: number = 0;
   valorEntrega: number = 0; // Inicialmente, o valor de entrega é 0
 
   constructor(private carrinhoService: CarrinhoService ) {
-    // Obtém a hora atual
-    const currentDate = new Date();
-    currentDate.setHours(currentDate.getHours() + 1);
-
-    // Formata a hora no formato 'hh:mm'
-    this.defaultHorario = this.formatHorario(currentDate);
+   
   }
 
   ngOnInit() {
@@ -88,22 +82,40 @@ export class FinalizeOrderComponent implements OnInit {
   }
 
   concluirCompra() {
-
-    if (this.produtosDoCarrinho.length === 0) {
+    if (this.produtosDoCarrinho.length === 0) { 
       return;
     }
+  
+    let valorEntregaTexto = '';
+    let enderecoEntregaTexto = '';
+  
+    if (this.tipoEntrega === 'entregar') {
+      this.valorEntrega = 10; // Define o valor da entrega como R$10,00 quando "Entregar pedido" é selecionado
+      valorEntregaTexto = `Taxa de entrega: R$${this.valorEntrega.toFixed(2)}`;
+      enderecoEntregaTexto = `Endereço de Entrega: ${this.enderecoEntrega}`;
+    } else {
+      this.valorEntrega = 0; // Define o valor da entrega como 0 quando "Retirar pedido" é selecionado
+      enderecoEntregaTexto = 'Retirar no local';
+    }
+  
+    const totalCompra = this.calcularPrecoTotal();
+  
+    const itensPedido = this.produtosDoCarrinho.map(item => `${item.quantidade}x ${item.name} - R$${(item.price * item.quantidade).toFixed(2)}`).join(' | ');
+  
     const mensagem =
-      'Olá, gostaria de realizar um pedido!\n\n' +
-      this.produtosDoCarrinho.map(item => `${item.quantidade}x ${item.name} - R$${(item.price * item.quantidade).toFixed(2)}`).join('\n') +
-      '\n-------------------------------\n' +
-      `Ficando no Total: R$${this.calcularPrecoTotalFinal().toFixed(2)}\n\n` +
-      `O método de pagamento vai ser: ${this.metodoPagamento}\n` +
-      `Metodo de entrega: ${this.metodoEntrega === 'retirar' ? 'Vou retirar o pedido' : 'Vou querer que entregue (' + this.enderecoEntrega + ')'}\n` +
-      `Tudo isso quero para o dia: ${this.dataHora}`;
-
+      `Olá, gostaria de realizar um pedido!\n\n` +
+      `${itensPedido}\n\n` +
+      `Ficando no Total: R$${totalCompra.toFixed(2)}.` +
+      `${valorEntregaTexto}\n` +
+      ` ------------\n` +
+      `O método de pagamento vai ser: ${this.metodoPagamento}, Método de entrega: ${this.tipoEntrega === 'entregar' ? 'Entrega' : 'Retirar no local'}. ${enderecoEntregaTexto}, as ${this.Horario} horas. Aguardo seu retorno!`;
+  
     const linkWhatsApp = `https://wa.me/${this.numeroLoja}?text=${encodeURIComponent(mensagem)}`;
-
+  
     window.open(linkWhatsApp, '_blank');
   }
+  
+  
+  
 
 }

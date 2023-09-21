@@ -425,8 +425,6 @@ export class ProductsComponent {
 
   @ViewChild('modalDetalhesProduto') modalDetalhesProduto!: string;
 
-  
-  
 }
 
 

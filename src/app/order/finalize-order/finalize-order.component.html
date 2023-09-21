@@ -57,11 +57,11 @@
         <div>R$10,00</div>
       </div>
       <div class="col">
-        <input type="radio" id="entregar" [(ngModel)]="tipoEntrega" name="tipoEntrega" class="custom-control-input" value="entregar"  >
+        <input type="radio" id="entregar" [(ngModel)]="tipoEntrega" name="tipoEntrega" class="custom-control-input" value="entregar">
       </div>
-      <div class="form-group text-center mt-2" *ngIf="toggleEndereco()">
-        <label for="enderecoEntrega ">Endereço da Entrega:</label>
-        <input type="text" class="form-control" id="enderecoEntrega" name="enderecoEntrega">
+      <div class="col text-center mt-2"  *ngIf="toggleEndereco()">
+        <label for="enderecoEntrega">Endereço da Entrega:</label>
+        <input type="text" class="form-control" id="enderecoEntrega" name="enderecoEntrega" [(ngModel)]="enderecoEntrega" >
       </div>
     </div>
   </div>
@@ -75,7 +75,7 @@
         <strong for="metodoHorario">Horário:</strong>
       </div>
       <div class="col">
-        <input type="time" class="form-control" id="horarioPadrao" [value]="defaultHorario">
+        <input type="time" class="form-control" id="horarioPadrao" [(ngModel)]="Horario" name="Horario">
       </div>
     </div>
   </div>
@@ -100,11 +100,9 @@
   <hr>
 </form>
 
-
-
 <div class=" mb-5  text-center">
-  <div class="btn btn-primary custom-primary-button no-border custom-image-small custom-button-height mb-3">
-    <button class="btn btn-primary btn-block custom-primary-button no-border custom-image-small " (click)="concluirCompra()">
+  <div class="btn custom-primary-button no-border custom-image-small custom-button-height mb-3">
+    <button class="btn  btn-block custom-primary-button no-border custom-image-small " (click)="concluirCompra()">
       Continuar
     </button>
   </div>
