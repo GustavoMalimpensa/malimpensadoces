@@ -91,7 +91,7 @@ export class FinalizeOrderComponent implements OnInit {
   
     if (this.tipoEntrega === 'entregar') {
       this.valorEntrega = 10; // Define o valor da entrega como R$10,00 quando "Entregar pedido" é selecionado
-      valorEntregaTexto = `taxa de entrega: R$${this.valorEntrega.toFixed(2)}`;
+      valorEntregaTexto = `Taxa de entrega: R$${this.valorEntrega.toFixed(2)}`;
       enderecoEntregaTexto = `Endereço de Entrega: ${this.enderecoEntrega}`;
     } else {
       this.valorEntrega = 0; // Define o valor da entrega como 0 quando "Retirar pedido" é selecionado
@@ -105,10 +105,12 @@ export class FinalizeOrderComponent implements OnInit {
     const mensagem =
       `Olá, gostaria de realizar um pedido!\n\n` +
       `${itensPedido}\n\n` +
-      `Ficando : R$${totalCompra.toFixed(2)} +` +
+      `Ficando : R$${totalCompra.toFixed(2)} + \n` +
       `${valorEntregaTexto}\n` +
       ` ------------\n` +
-      `O método de pagamento vai ser: ${this.metodoPagamento}, Método de entrega: ${this.tipoEntrega === 'entregar' ? 'Entrega' : 'Retirar no local'}. ${enderecoEntregaTexto}, as ${this.Horario} horas. Aguardo seu retorno!`;
+      `Método de pagamento vai ser: ${this.metodoPagamento} \n` +
+      `Método de entrega: ${this.tipoEntrega === 'entregar' ? 'Entrega' : 'Retirar no local'}. ${enderecoEntregaTexto}, as ${this.Horario} horas. \n\n` +
+      ` Aguardo seu retorno!`;
   
     const linkWhatsApp = `https://wa.me/${this.numeroLoja}?text=${encodeURIComponent(mensagem)}`;
   
