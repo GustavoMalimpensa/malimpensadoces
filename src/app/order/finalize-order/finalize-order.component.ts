@@ -20,7 +20,7 @@ export class FinalizeOrderComponent implements OnInit {
   editandoHorario: boolean = false;
   horarioPersonalizado: string = '';
   totalCompra: number = 0;
-
+  valorEntrega: number = 0; // Inicialmente, o valor de entrega é 0
 
   constructor(private carrinhoService: CarrinhoService ) {
     // Obtém a hora atual
@@ -53,13 +53,18 @@ export class FinalizeOrderComponent implements OnInit {
     return total;
   }
 
-  calcularPrecoTotalCompra(): number {
-    
+  calcularPrecoTotalFinal(): number {
     let total = 0;
-  
-    for (const produto of this.produtosDoCarrinho) {
-      total += produto.price * produto.quantidade;
+
+    for (const item of this.produtosDoCarrinho) {
+      total += item.price * item.quantidade;
     }
+
+    // Se a opção de entrega for "entregar", adicione o valor da entrega
+    if (this.tipoEntrega === 'entregar') {
+      total += this.valorEntrega;
+    }
+
     return total;
   }
 
@@ -77,9 +82,6 @@ export class FinalizeOrderComponent implements OnInit {
     return num < 10 ? `0${num}` : `${num}`;
   }
 
-  
-    
-
   // Função para habilitar a edição do horário personalizado
   editarHorario() {
     this.editandoHorario = true;
@@ -94,7 +96,7 @@ export class FinalizeOrderComponent implements OnInit {
       'Olá, gostaria de realizar um pedido!\n\n' +
       this.produtosDoCarrinho.map(item => `${item.quantidade}x ${item.name} - R$${(item.price * item.quantidade).toFixed(2)}`).join('\n') +
       '\n-------------------------------\n' +
-      `Ficando no Total: R$${this.calcularPrecoTotal().toFixed(2)}\n\n` +
+      `Ficando no Total: R$${this.calcularPrecoTotalFinal().toFixed(2)}\n\n` +
       `O método de pagamento vai ser: ${this.metodoPagamento}\n` +
       `Metodo de entrega: ${this.metodoEntrega === 'retirar' ? 'Vou retirar o pedido' : 'Vou querer que entregue (' + this.enderecoEntrega + ')'}\n` +
       `Tudo isso quero para o dia: ${this.dataHora}`;

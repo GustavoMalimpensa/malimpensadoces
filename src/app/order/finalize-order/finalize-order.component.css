@@ -61,16 +61,16 @@ border-color: red;
 
 .nome-modal{
     font-size: 15px;
-    padding-bottom: 8px;
+    padding-bottom: 7px;
     padding-top: 10px;
 }
 
 .quantidade-modal{
     font-size: 10px;
-    padding-top: 5px ;
+    padding-top: 6px ;
 }
 
 .preco-total-modal{
     font-size: 10px;
-    padding-top: 5px;
+    padding-top: 6px;
 }
