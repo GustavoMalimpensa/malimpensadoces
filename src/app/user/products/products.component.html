@@ -33,8 +33,7 @@
   </div>
 </div>
 
-
-<!--Botão do modal-->
+<!--Botão do modal carrinho -->
 
 <div class="mb-5 mt-3 text-center">
   <div class="btn btn-primary custom-primary-button  btn-block btn-block mb-3 no-border">
@@ -43,7 +42,6 @@
     </button>
   </div>
 </div>
-
 
 <!--Modal Detalhe Produtos-->
 
@@ -58,31 +56,31 @@
       <div class="img-modal">
         <img src="{{ produtoDetalhado.imageUrl }}" alt="{{ produtoDetalhado.name }}" class="custom-image-detalhes img-fluid">
       </div>
+    
       <div class="col-12 col-md-6 mt-3">
         <!-- Descrição -->
         <p>Ingredientes: {{ produtoDetalhado.description }}</p>
         <!-- Preço -->
         <h5>R$ {{ produtoDetalhado.price }},00</h5>
-        
+      </div>  
         <!-- Controles de quantidade -->
-        <div class="d-flex align-items-center justify-content-between mt-3 conteiner">
+      <div class="d-flex align-items-center justify-content-between mt-3 conteiner">
 
-          <div class="d-flex align-items-center custom-content">
-            <button class="btn btn-link btn-lg button-quantidade" (click)="diminuirQuantidade()">-</button>
-            <span class="mx-3 fs-3">{{ quantidadeSelecionada }}</span>
-            <button class="btn btn-link btn-lg button-quantidade" (click)="aumentarQuantidade()">+</button>
-          </div>
-
-
-          <!-- Botão "Adicionar ao Carrinho" -->
-          <div class="shoe text-center text-white cursor ">
-            <button class="btn btn-primary custom-primary-button button-product btn-block btn-block no-border" (click)="adicionarAoCarrinho(produtoDetalhado)">
-              Adicionar    R${{ quantidadeSelecionada * produtoDetalhado.price }},00
-            </button>
-          </div>
-
+        <div class="d-flex align-items-center custom-content">
+          <button class="btn btn-link btn-lg button-quantidade" (click)="diminuirQuantidade()">-</button>
+          <span class="mx-3 fs-3">{{ quantidadeSelecionada }}</span>
+          <button class="btn btn-link btn-lg button-quantidade" (click)="aumentarQuantidade()">+</button>
         </div>
+
+        <!-- Botão "Adicionar ao Carrinho" -->
+        <div class="shoe text-center text-white cursor ">
+          <button class="btn btn-primary custom-primary-button button-product btn-block btn-block no-border" (click)="adicionarAoCarrinho(produtoDetalhado)">
+            Adicionar    R${{ quantidadeSelecionada * produtoDetalhado.price }},00
+          </button>
+        </div>
+
       </div>
+      
     </div>
   </div>
 </ng-template>
@@ -137,7 +135,7 @@
         </div>
       </div>
       
-      <div>
+      <div class="text-center">
         <button class="btn btn-primary custom-primary-button btn-block custom-button-height no-border" (click)="finalizarCompra()">
           Continuar
         </button>
