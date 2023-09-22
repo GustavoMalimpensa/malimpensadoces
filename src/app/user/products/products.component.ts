@@ -418,8 +418,9 @@ export class ProductsComponent {
 
   finalizarCompra() {
     this.modalRef?.hide();
-    this.router.navigate(['/pedido']);
+    this.router.navigate(['/pedido'], { queryParams: { from: 'home' } });
   }
+  
   
   @ViewChild('modalTemplate') modalTemplate!: string;
 
