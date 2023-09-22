@@ -90,7 +90,7 @@
 
 /* Defina a altura máxima da seção de cards e permita a rolagem */
 .card-section {
-    max-height: 60vh; /* Ajuste a altura máxima conforme necessário */
+    max-height: 58vh; /* Ajuste a altura máxima conforme necessário */
     overflow-y: auto; /* Adicione barras de rolagem vertical quando necessário */
 }
 
@@ -182,8 +182,6 @@ color: #ffcfd9;
 
 .custom-image {
     position: relative; 
-    max-height: 150px;
-    height: 150px; /* Defina a altura desejada */
     width: auto; /* Largura automática para manter a proporção */
     object-fit: cover; /* Mantém a proporção e corta o excesso */
     border-radius: 10px 10px 0 0; 
@@ -192,6 +190,7 @@ color: #ffcfd9;
 .card-body {
     background-color: #ffcfd9;
     padding: 5px;
+    padding-top: 0px;
     border-radius: 0 0 10px 10px; 
 }
 

@@ -24,8 +24,8 @@
     <div class="col-4 m-0 p-1 " *ngFor="let product of filteredProducts">
       <div class="card" (click)="abrirModalDetalhesProduto(product)" >
         <img src="{{ product.imageUrl }}" alt="{{ product.name }}" class="custom-image">
-        <div class="card-body text-right">
-          <h5 class="card-title">{{ product.name }}</h5>
+        <div class="card-body text-center">
+          <strong class="card-title">{{ product.name }}</strong>
           <p class="card-text">R$ {{ product.price }},00</p>
         </div>
       </div>
