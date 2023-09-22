@@ -12,7 +12,7 @@ export class FinalizeOrderComponent implements OnInit {
   metodoPagamento: string = 'pix';
   metodoEntrega: string = 'retirar';
   enderecoEntrega: string = '';
-  numeroLoja: string = '+5519999372133';
+  numeroLoja: string = '+5519998133186';
   produtosDoCarrinho: any[] = []; // Declare a propriedade produtosDoCarrinho aqui
   tipoEntrega: string = ''; // Variável para armazenar o tipo de entrega
   Horario: string = '';
