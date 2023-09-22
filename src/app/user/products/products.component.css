@@ -1,15 +1,38 @@
 /* CSS personalizado */
 .custom-primary-button {
-    background-color: #cb0606; /* Substitua isso pela cor desejada em formato hexadecimal ou nome da cor */
-    color: #FFFFFF; /* Cor do texto no botão */
+    background-color: #ffcfd9; /* Substitua isso pela cor desejada em formato hexadecimal ou nome da cor */
+    color: #8c5b65; /* Cor do texto no botão */
+    font-weight: bold; 
 }
 
 .custom-content {
-    border: 1px solid gray;
+    border: 1px solid #8c5b65;
     border-radius: 10px;
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+
+/*botão de quantidade*/
+
+.custom-content-quantidade{
+    color: #8c5b65;
+    border: 1px solid #8c5b65;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold; 
+}
+
+.button-quantidade {
+    text-decoration: none;
+    color: #8c5b65;
+    font-weight: bold; 
+}
+.button-quantidade:hover {
+    text-decoration: none;
+    color: #8c5b65;
 }
 
 .no-border {
@@ -18,11 +41,6 @@
 
 .button-product {
     padding: 12px;
-}
-
-.button-quantidade {
-    text-decoration: none;
-    color: #cb0606;
 }
 
 .custom-image-detalhes {
@@ -42,23 +60,32 @@
     font-size: 10px;
     padding-bottom: 8px;
     padding-top: 8px;
+    color: #8c5b65;
+    font-weight: bold;
 }
 
 .quantidade-modal{
+
+    font-size: 10px;
+    color: #8c5b65;
+    font-weight: bold;
+}
+
+.custom-price-min{
+    font-size: 10px;
+    color: #8c5b65;
+    font-weight: bold;
     font-size: 10px;
 }
 
-.preco-total-modal{
-    font-size: 10px;
-}
 
 .custom-primary-button:active {
-    background-color: #cb0606; /* Cor quando o botão está ativo (pressionado) */
+    background-color: #ffcfd9; /* Cor quando o botão está ativo (pressionado) */
 }
 
 .custom-modal-header {
-    background-color:  #cb0606; /* Cor de fundo do cabeçalho */
-    color: white; /* Cor do texto no cabeçalho */
+    background-color:  #ffcfd9; /* Cor de fundo do cabeçalho */
+    color: #8c5b65; /* Cor do texto no cabeçalho */
 }
 
 /* Defina a altura máxima da seção de cards e permita a rolagem */
@@ -72,7 +99,7 @@ list-style: none;
 padding: 0;
 display: flex;
 justify-content: center;
-border-bottom: 1px solid #dbd6d6; /* Linha inferior */
+border-bottom: 1px solid #8c5b6547; /* Linha inferior */
 flex-wrap: wrap; /* Permitir que os filtros quebrem para uma nova linha em telas menores */
 }
 
@@ -85,7 +112,7 @@ text-align: center;
 }
 
 .categories a {
-color: #6e6e6e;
+color: #8c5b65;
 font-size: 16px; /* Tamanho de fonte menor para telas menores */
 line-height: 20px;
 font-weight: 600;
@@ -103,7 +130,7 @@ content: "";
 position: absolute;
 left: 0;
 bottom: 0;
-background: #cd0d0d;
+background: #ffcfd9;
 width: 100%;
 height: 2px;
 transition: width 0.4s;
@@ -116,7 +143,7 @@ width: 0;
 
 /* Estilo para o filtro ativo */
 .categories a.active {
-color: #cd0d0d;
+color: #ffcfd9;
 }
 
 /* Media query para ajustar o tamanho da fonte em telas menores */
@@ -131,19 +158,14 @@ color: #cd0d0d;
     position: absolute;
     left: 0;
     bottom: 0;
-    background: #cd0d0d;
+    background: #ffcfd9;
     width: 100%;
     height: 2px;
     transition: width 0.4s;
 }
 }
   
-/*fim da estilização do filtro*/
-
-
-.conteiner{
-    margin-top: 110px;
-}
+/*Estilizando o card*/
 
 .card {
     border: none;
@@ -152,35 +174,58 @@ color: #cd0d0d;
     border-radius: 20px;
 }
 
+
 .card:hover{
-    transform: translate(-15px);
+    transform: translate(-4px);
     transition: transform .3s;
-}
-
-.card-body {
-    background-color: #9b9999;
-    padding: 5px;
-}
-
-.card-title {
-    font-size: 10px;
-    color: #dee2e6;
-}
-
-.card-text {
-    font-size: 10px;
-    color: #dee2e6;
- 
 }
 
 .custom-image {
     position: relative; 
-    max-height: 200px;
-    height: 200px; /* Defina a altura desejada */
+    max-height: 150px;
+    height: 150px; /* Defina a altura desejada */
     width: auto; /* Largura automática para manter a proporção */
     object-fit: cover; /* Mantém a proporção e corta o excesso */
+    border-radius: 10px 10px 0 0; 
 }
 
+.card-body {
+    background-color: #ffcfd9;
+    padding: 5px;
+    border-radius: 0 0 10px 10px; 
+}
+
+.card-title {
+    font-size: 10px;
+    color: #8c5b65;
+}
+
+.card-text {
+    font-size: 10px;
+    color: #8c5b65;
+    font-weight: bold; 
+}
+
+
+
+
+
+.modal-title {
+    color: #8c5b65;
+    font-weight: bold; 
+    font-size: 18px;
+}
+
+.custom-info {
+    color: #8c5b65;
+    font-weight: bold;
+}
+
+.custom-price {
+    color: #8c5b65;
+    font-weight: bold; 
+    font-size: 14px;
+}
 
 /* Media query para telas pequenas */
 @media screen and (max-width: 768px) {
@@ -209,6 +254,7 @@ color: #cd0d0d;
 /* CSS personalizado */
 .custom-button-height {
     width: 330px; /* Altura desejada em pixels */
+    font-weight: bold; 
 }
   
 .modal-carinho-final{
@@ -219,3 +265,25 @@ color: #cd0d0d;
     max-width: max-content;
     max-height: 150px;
 }
+
+.button-limpar {
+    background-color: #ffcfd9;
+    color:  #8c5b65;
+    font-weight: bold; 
+    border:  #ffcfd9 ;
+}
+
+.button-limpar:hover {
+    background-color: #ffcfd9;
+    color:  #8c5b65;
+    font-weight: bold; 
+    border:  #ffcfd9 ;
+} 
+
+.button-remover {
+    background-color: #ffcfd9;
+    color:  #8c5b65;
+    font-weight: bold; 
+    border:  #ffcfd9 ;
+}
+

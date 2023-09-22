@@ -48,7 +48,7 @@
 <ng-template #modalDetalhesProduto>
   <div class="modal-header custom-modal-header text-white">
     <h4 class="modal-title">{{ produtoDetalhado.name }}</h4>
-    <button type="button" class="btn-close close" aria-label="Close" (click)="modalRef?.hide()"></button>
+    <button type="button" class="btn-close close custom-close" aria-label="Close" (click)="modalRef?.hide()"></button>
   </div>
   <div class="modal-body">
     <div class="row">
@@ -59,14 +59,12 @@
     
       <div class="col-12 col-md-6 mt-3">
         <!-- Descrição -->
-        <p>Ingredientes: {{ produtoDetalhado.description }}</p>
-        <!-- Preço -->
-        <h5>R$ {{ produtoDetalhado.price }},00</h5>
+        <p class="custom-info">Ingredientes: {{ produtoDetalhado.description }}</p>
       </div>  
         <!-- Controles de quantidade -->
       <div class="d-flex align-items-center justify-content-between mt-3 conteiner">
 
-        <div class="d-flex align-items-center custom-content">
+        <div class="d-flex align-items-center custom-content-quantidade">
           <button class="btn btn-link btn-lg button-quantidade" (click)="diminuirQuantidade()">-</button>
           <span class="mx-3 fs-3">{{ quantidadeSelecionada }}</span>
           <button class="btn btn-link btn-lg button-quantidade" (click)="aumentarQuantidade()">+</button>
@@ -78,9 +76,7 @@
             Adicionar    R${{ quantidadeSelecionada * produtoDetalhado.price }},00
           </button>
         </div>
-
       </div>
-      
     </div>
   </div>
 </ng-template>
@@ -88,16 +84,16 @@
 
 <!--Modal Carrinho de Compras-->
 
-<ng-template #modalTemplate>
-  <div class="modal-header custom-modal-header text-white">
-    <div class="x-model">
-      <button type="button" class="btn-close close" aria-label="Close" (click)="modalRef?.hide()"></button>
+<ng-template #modalTemplate class="modal-full">
+  <div class="modal-header custom-modal-header">
+    <div class="fechar-model">
+      <button type="button" class="btn btn-secondary button-limpar"  (click)="modalRef?.hide()">X</button>
     </div>
     <div >
       <h4 class="modal-title mx-auto">Carrinho</h4>
     </div>
     <div class="limpar-model">
-      <button type="button" class="btn btn-secondary" (click)="limparCarrinho()">Limpar</button>
+      <button type="button" class="btn btn-secondary button-limpar" (click)="limparCarrinho()">Limpar</button>
     </div>
   </div>
   <div class="modal-body">
@@ -107,38 +103,37 @@
           <img src="{{ item.imageUrl }}" alt="{{ item.name }}" class="custom-small-square-image">
         </div>
         <div class="col">
-          <div class="col align-self-start nome-modal ">
+          <div class="col align-items-left nome-modal ">
             <strong class="nome-modal">{{ item.name }}</strong>
           </div>
-          <div class="col align-self-start quantidade-modal">
+          <div class="col align-items-left quantidade-modal">
             <h5  class="quantidade-modal">Quantidade: {{ item.quantidade }}</h5>
           </div>
-          <div class="col align-self-start preco-total-modal">
-            <strong>Total: R$ {{ item.price * item.quantidade }},00</strong>
+          <div class="col align-items-left custom-price">
+            <strong class="custom-price-min">Total: R$ {{ item.price * item.quantidade }},00</strong>
           </div>
         </div>
         <div class="col d-flex align-items-center">
-          <button class="btn btn-danger" (click)="removerDoCarrinho(item)">Remover</button>
+          <button class="btn btn-danger button-remover" (click)="removerDoCarrinho(item)">Remover</button>
         </div>
       </div> 
     </div>
   </div>
   
-  
-    <div class="modal-footer row">
-      <div *ngIf="carrinho.length > 0" class="col d-flex justify-content-between">
-        <div class="col">
-          <Strong>Preço Total:</Strong>
-        </div>
-        <div class="col modal-carinho-final">
-          <strong>R$ {{ precoTotal }}</strong>
-        </div>
+  <div class="modal-footer row">
+    <div *ngIf="carrinho.length > 0" class="col d-flex justify-content-between">
+      <div class="col">
+        <Strong class="custom-price">Preço Total:</Strong>
       </div>
-      
-      <div class="text-center">
-        <button class="btn btn-primary custom-primary-button btn-block custom-button-height no-border" (click)="finalizarCompra()">
-          Continuar
-        </button>
+      <div class="col modal-carinho-final">
+        <strong class="custom-price">R$ {{ precoTotal }}</strong>
       </div>
     </div>
+    
+    <div class="text-center">
+      <button class="btn btn-primary custom-primary-button btn-block custom-button-height no-border" (click)="finalizarCompra()">
+        Continuar
+      </button>
+    </div>
+  </div>
 </ng-template>

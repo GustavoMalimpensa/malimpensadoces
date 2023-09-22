@@ -1,22 +1,35 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 /* Estilo para o logo no canto superior esquerdo */
 .logo {
     margin-right: 5px; /* Espaçamento entre a imagem e o texto */
-    width: 50px; /* Tamanho da imagem do logotipo */
-    height: 50px; /* Tamanho da imagem do logotipo */
+    width: 60px; /* Tamanho da imagem do logotipo */
+    height: 60px; /* Tamanho da imagem do logotipo */
 }
 
 /* Estilo para o texto do logo */
 .navbar-brand {
     font-weight: bold;
     padding: 5px 0; /* Margem superior e inferior */
-    color: #9b9999;
+    color: #8c5b65;
+    font-family: sans-serif;
+    font-size: 25px;
 }
 
-.navbar {
-    background-color: rgb(255, 255, 255);
-}
+/* Media query para ajustar o tamanho da fonte em telas menores */
+@media screen and (max-width: 768px) {
+    /* Estilo para o logo no canto superior esquerdo */
+    .logo {
+        margin-right: 5px; /* Espaçamento entre a imagem e o texto */
+        width: 43px; /* Tamanho da imagem do logotipo */
+        height: 43px; /* Tamanho da imagem do logotipo */
+    }
 
-.navbar-toggler-icon {
-    color: #FF0000; /* Substitua #FF0000 pela cor desejada em formato hexadecimal ou nome da cor */
+    /* Estilo para o texto do logo */
+    .navbar-brand {
+        font-weight: bold;
+        padding: 5px 0; /* Margem superior e inferior */
+        color: #8c5b65;
+        font-family: sans-serif;
+        font-size: 18px;
+    } 
 }
-
