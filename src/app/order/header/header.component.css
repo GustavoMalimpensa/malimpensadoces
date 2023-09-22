@@ -1,6 +1,4 @@
-/*@import "~bootstrap-icons/font/bootstrap-icons.css";*/
 /* Estilo para o logo no canto superior esquerdo */
-
 .logo {
     margin-right: 5px; /* Espaçamento entre a imagem e o texto */
     width: 60px; /* Tamanho da imagem do logotipo */
@@ -10,14 +8,11 @@
 /* Estilo para o texto do logo */
 .navbar-brand {
     font-weight: bold;
+    padding: 5px 0; /* Margem superior e inferior */
     color: #8c5b65;
     font-family: sans-serif;
     font-size: 25px;
-    margin-top: 2px;
 }
-
-
-
 
 /* Media query para ajustar o tamanho da fonte em telas menores */
 @media screen and (max-width: 768px) {

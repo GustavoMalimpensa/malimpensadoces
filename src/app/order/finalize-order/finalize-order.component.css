@@ -1,7 +1,13 @@
 /* CSS personalizado */
 .custom-primary-button {
-    background-color: #cb0606; /* Substitua isso pela cor desejada em formato hexadecimal ou nome da cor */
-    color: #FFFFFF; /* Cor do texto no botão */
+    background-color: #ffcfd9; /* Substitua isso pela cor desejada em formato hexadecimal ou nome da cor */
+    color: #8c5b65; /* Cor do texto no botão */
+    font-weight: bold; 
+}
+
+.custom-primary-button:hover {
+    background-color: #ffcfd9; /* Substitua isso pela cor desejada em formato hexadecimal ou nome da cor */
+    color: #8c5b65; /* Cor do texto no botão */
 }
 
 .no-border {
@@ -31,7 +37,7 @@
 }
 
 .custom-content {
-    border: 1px solid gray;
+    border: 1px solid #8c5b65;
     border-radius: 10px;
     padding: 10px;
     width: 100%;
@@ -41,20 +47,22 @@
 }
 
 .custom-content:hover {
-border-color: red;
+border-color: #8c5b65;
 }
 
 .custom-content input[type="radio"]:checked + .bolinha {
-background-color: red;
-border-color: red;
+background-color: #8c5b65;
+border-color: #8c5b65;
 }
 
 
 
 /* Media query para ajustar o tamanho da fonte em telas menores */
 @media screen and (max-width: 768px) {
+
     .categories a {
         font-size: 14px; /* Tamanho de fonte ainda menor para telas menores */
+        color: #8c5b65; 
     }
     .custom-content {
         width: 100%;
@@ -63,7 +71,7 @@ border-color: red;
     .custom-content-carrinho {
         width: 100%;
         cursor: pointer;
-        border: 1px solid gray;
+        border: 1px solid #8c5b65;
         border-radius: 10px;
     }
    
@@ -80,14 +88,22 @@ border-color: red;
     font-size: 15px;
     padding-bottom: 7px;
     padding-top: 10px;
+    color: #8c5b65; 
 }
 
 .quantidade-modal{
     font-size: 10px;
     padding-top: 6px ;
+    color: #8c5b65; 
 }
 
 .preco-total-modal{
     font-size: 10px;
     padding-top: 6px;
+    color: #8c5b65; 
+}
+
+.text-color {
+    color: #8c5b65; 
+    font-weight: bold; 
 }

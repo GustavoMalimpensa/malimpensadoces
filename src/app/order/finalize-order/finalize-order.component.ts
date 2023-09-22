@@ -20,6 +20,7 @@ export class FinalizeOrderComponent implements OnInit {
   horarioPersonalizado: string = '';
   totalCompra: number = 0;
   valorEntrega: number = 0; // Inicialmente, o valor de entrega é 0
+  logoImagePath = './assets/img/logo.mini.png'; 
 
   constructor(private carrinhoService: CarrinhoService ) {
    

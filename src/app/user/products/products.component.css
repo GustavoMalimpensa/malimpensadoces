@@ -90,7 +90,7 @@
 
 /* Defina a altura máxima da seção de cards e permita a rolagem */
 .card-section {
-    max-height: 58vh; /* Ajuste a altura máxima conforme necessário */
+    max-height: 66vh; /* Ajuste a altura máxima conforme necessário */
     overflow-y: auto; /* Adicione barras de rolagem vertical quando necessário */
 }
 
@@ -146,25 +146,6 @@ width: 0;
 color: #ffcfd9;
 }
 
-/* Media query para ajustar o tamanho da fonte em telas menores */
-@media screen and (max-width: 768px) {
-.categories a {
-    font-size: 14px; /* Tamanho de fonte ainda menor para telas menores */
-}
-
-/* Remover a linha inferior em telas menores */
-.categories a.active::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: #ffcfd9;
-    width: 100%;
-    height: 2px;
-    transition: width 0.4s;
-}
-}
-  
 /*Estilizando o card*/
 
 .card {
@@ -182,6 +163,8 @@ color: #ffcfd9;
 
 .custom-image {
     position: relative; 
+    max-height: 150px;
+    height: 150px; /* Defina a altura desejada */
     width: auto; /* Largura automática para manter a proporção */
     object-fit: cover; /* Mantém a proporção e corta o excesso */
     border-radius: 10px 10px 0 0; 
@@ -205,10 +188,6 @@ color: #ffcfd9;
     font-weight: bold; 
 }
 
-
-
-
-
 .modal-title {
     color: #8c5b65;
     font-weight: bold; 
@@ -226,29 +205,6 @@ color: #ffcfd9;
     font-size: 14px;
 }
 
-/* Media query para telas pequenas */
-@media screen and (max-width: 768px) {
-
-    /* Ajuste a largura e o espaçamento conforme necessário para telas menores */
-    .card:hover {
-        transform: none;
-    }
-
-    .text1 {
-        font-size: 12px; /* Tamanho de fonte menor para telas menores */
-    }
-
-    .custom-image {
-        height: 100px; /* Defina a altura desejada */
-        width: auto; /* Largura automática para manter a proporção */
-        object-fit: cover; /* Mantém a proporção e corta o excesso */
-    }
-
-    .custom-image-detalhes {
-        height: 350px;
-    }
-    
-}
 
 /* CSS personalizado */
 .custom-button-height {
@@ -285,4 +241,51 @@ color: #ffcfd9;
     font-weight: bold; 
     border:  #ffcfd9 ;
 }
+
+
+
+/* Media query para telas pequenas */
+@media screen and (max-width: 768px) {
+
+    /* Ajuste a largura e o espaçamento conforme necessário para telas menores */
+    .card:hover {
+        transform: none;
+    }
+
+    .text1 {
+        font-size: 12px; /* Tamanho de fonte menor para telas menores */
+    }
+
+    .custom-image {
+        height: 90px; /* Defina a altura desejada */
+        width: auto; /* Largura automática para manter a proporção */
+        object-fit: cover; /* Mantém a proporção e corta o excesso */
+    }
+
+    .custom-image-detalhes {
+        height: 350px;
+    }
+
+    .card-section {
+        max-height: 55vh; /* Ajuste a altura máxima conforme necessário */
+    }
+
+    .categories a {
+        font-size: 14px; /* Tamanho de fonte ainda menor para telas menores */
+    }
+
+    /* Remover a linha inferior em telas menores */
+    .categories a.active::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: #ffcfd9;
+        width: 100%;
+        height: 2px;
+        transition: width 0.4s;
+    }
+    
+}
+  
 
