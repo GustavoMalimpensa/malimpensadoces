@@ -1,4 +1,4 @@
-
+<!--Importando produtos do carrinho-->
 <div class="container mt-3">
   <strong class="text-color">Carrinho:</strong>
   <div *ngIf="produtosDoCarrinho.length > 0; else carrinhoVazio"></div>
@@ -33,6 +33,9 @@
       <strong class="text-color text-color">Preço total da compra: R$ {{ calcularPrecoTotal()}},00</strong>
   </div>
 </div>
+
+
+<!--Formulario para preencher dados antes de entregar-->
 
 <form class="conteiner">
   <hr>

@@ -52,25 +52,21 @@
   </div>
   <div class="modal-body">
     <div class="row">
-      <!-- Imagem preenchendo 50% do tamanho do modal -->
+  
       <div class="img-modal">
         <img src="{{ produtoDetalhado.imageUrl }}" alt="{{ produtoDetalhado.name }}" class="custom-image-detalhes img-fluid">
       </div>
     
       <div class="mt-3">
-        <!-- Descrição -->
         <p class="custom-info">Ingredientes: {{ produtoDetalhado.description }}</p>
       </div>  
-        <!-- Controles de quantidade -->
+      
       <div class="d-flex align-items-center justify-content-between mt-3 conteiner">
-
         <div class="d-flex align-items-center custom-content-quantidade">
           <button class="btn btn-link btn-lg button-quantidade" (click)="diminuirQuantidade()">-</button>
           <span class="mx-3 fs-3">{{ quantidadeSelecionada }}</span>
           <button class="btn btn-link btn-lg button-quantidade" (click)="aumentarQuantidade()">+</button>
         </div>
-
-        <!-- Botão "Adicionar ao Carrinho" -->
         <div class="shoe text-center text-white cursor ">
           <button class="btn btn-primary custom-primary-button button-product btn-block btn-block no-border" (click)="adicionarAoCarrinho(produtoDetalhado)">
             Adicionar    R${{ quantidadeSelecionada * produtoDetalhado.price }},00

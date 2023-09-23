@@ -1,5 +1,5 @@
 import { Component, OnInit  } from '@angular/core';
-import { CarrinhoService } from '../../services/carrinho.service';
+import { CarrinhoService } from '../../../services/carrinho.service';
 
 @Component({
   selector: 'app-finalize-order',
@@ -8,18 +8,18 @@ import { CarrinhoService } from '../../services/carrinho.service';
 })
 export class FinalizeOrderComponent implements OnInit {
 
-  metodoEntregaOpcao: string = 'entregar'; // Declare a variável
+  metodoEntregaOpcao: string = 'entregar'; 
   metodoPagamento: string = 'pix';
   metodoEntrega: string = 'retirar';
   enderecoEntrega: string = '';
   numeroLoja: string = '+5519998133186';
-  produtosDoCarrinho: any[] = []; // Declare a propriedade produtosDoCarrinho aqui
-  tipoEntrega: string = ''; // Variável para armazenar o tipo de entrega
+  produtosDoCarrinho: any[] = []; 
+  tipoEntrega: string = ''; 
   Horario: string = '';
   editandoHorario: boolean = false;
   horarioPersonalizado: string = '';
   totalCompra: number = 0;
-  valorEntrega: number = 0; // Inicialmente, o valor de entrega é 0
+  valorEntrega: number = 0; 
   logoImagePath = './assets/img/logo.mini.png'; 
 
   constructor(private carrinhoService: CarrinhoService ) {

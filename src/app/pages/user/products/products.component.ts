@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { CarrinhoService } from '../../services/carrinho.service';
+import { CarrinhoService } from '../../../services/carrinho.service';
 import { Product } from 'src/app/models/product';
 import { Router } from '@angular/router';
 import { allProducts } from 'src/app/data/products-data';
@@ -23,17 +23,17 @@ export class ProductsComponent {
   modalRef?: BsModalRef;
   title: string = '';
   produtoDetalhado: any;
-  quantidadeSelecionada: number = 1; // Inicialmente, a quantidade é 1
+  quantidadeSelecionada: number = 1;
   showSearchBar: boolean = false;
 
-  products: Product[] = allProducts; // Use os dados do produto aqui.
+  products: Product[] = allProducts;
 
   constructor(
     private modalService: BsModalService,
     private carrinhoService: CarrinhoService,
     private router: Router,
   ) {
-    this.carrinho = []; // Inicialize a variável carrinho aqui
+    this.carrinho = []; 
   }
 
   ngOnInit(): void {
@@ -50,7 +50,6 @@ export class ProductsComponent {
   //filtrar por pesquisa
 
   loadProducts() {
-    // Inicialmente, exiba todos os produtos
     this.filteredProducts = this.products;
   }
 

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  logoImagePath = './assets/img/logo.mini.png'; 
+  logoImagePath = './assets/img/logo.mini.png'
 }
