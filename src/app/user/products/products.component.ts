@@ -43,15 +43,15 @@ export class ProductsComponent {
   filterProducts(category: string) {
     this.selectedCategory = category;
     this.filteredProducts = category === '*' ?
-      this.allProducts :
-      this.allProducts.filter(product => product.category === category);
+      this.products :
+      this.products.filter(product => product.category === category);
   }
 
   //filtrar por pesquisa
 
   loadProducts() {
     // Inicialmente, exiba todos os produtos
-    this.filteredProducts = this.allProducts;
+    this.filteredProducts = this.products;
   }
 
   //modal para detalhes do produto
