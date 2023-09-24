@@ -11,16 +11,6 @@ export const allProducts: Product[] = [
     price: 13,
     quantidade: 1,
   },
-  {
-    id: 1,
-    category: 'bolo_pote',
-    name: 'Ninho c/ Morango',
-    description: 'Brigadeiro de ninho com morango e pedaços de morango.',
-    imageUrl: './assets/img/bolodedepote.jpeg',
-    keywords: 'morango',
-    price: 13,
-    quantidade: 1,
-  },
   //{
   //  id: 2,
   //  category: 'bolo_pote',
